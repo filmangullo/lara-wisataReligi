@@ -38,6 +38,8 @@ Route::get('/wisata/{wisata}/event', 'WisataController@event')->name('event');
 
 Route::resource('kontak', 'KontakController');
 
+Route::resource('tentang', 'TentangController');
+
 Route::resource('/kalender', 'EventController');
 
 Route::resource('/artikel', 'ArtikelController');

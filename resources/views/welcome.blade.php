@@ -69,7 +69,7 @@
                       <a href="/kontak">Kontak </a>
                     </li>
                     <li>
-                      <a href="contact.html">Tentang Kami </a>
+                      <a href="/tentang">Tentang Kami </a>
                     </li>
                     
                     @guest

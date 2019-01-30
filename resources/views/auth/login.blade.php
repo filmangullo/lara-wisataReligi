@@ -6,7 +6,7 @@
       <div class="row">
         <div class="span12">
           <div class="inner-heading" style="text-align:center">
-            <h2>{{ __('Login') }}</h2>
+            <h2>Login</h2>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    Login
                                 </button>
                             </div>
                             <p>{{__('login.ketreg') }} <a class="btn btn-link" href="{{ route('password.request') }}">
