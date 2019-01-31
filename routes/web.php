@@ -46,7 +46,8 @@ Route::resource('/artikel', 'ArtikelController');
 Route::get('/artikel/{artikel}', 'ArtikelController@show')->name('artikelDetail');
 
 Route::resource( 'profil', 'ProfilController');
-Route::post('profil', 'ProfilController@update_avatar');
+Route::get( 'profil/{id}/edit', 'ProfilController@edit')->name('profil.edit');
+Route::patch( 'profil/{id}/update', 'ProfilController@update')->name('profil.update');
 
 
 

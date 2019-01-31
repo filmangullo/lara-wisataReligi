@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use Image;
+use App\Profil;
 
 
 class ProfilController extends Controller
@@ -27,17 +28,7 @@ class ProfilController extends Controller
     // Handle the user upload of avatar
     public function update_avatar(Request $request)
     {
-        if($request->hasFile('avatar')){
-            $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save(public_path('/img/avatars/' . $filename));
-
-            $user = Auth::user();
-            $user->avatar = $filename;
-            $user->save();
-        }
-
-        return view('profil', ['user' => Auth::user()]);
+        
     }
 
     /**
@@ -80,7 +71,9 @@ class ProfilController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        
+        return view('profilEdit', compact('user'));
     }
 
     /**
@@ -92,7 +85,32 @@ class ProfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('/img/avatars/' . $filename));
+
+            $user = Auth::user();
+            $user->avatar = 'img/avatars/'.$filename;
+            $user->save();
+        }
+        $user = User::find($id);
+        $user->update([
+            'name' => request('name'),
+            'email' => request('email')
+        ]);
+
+        $profil = Profil::where('user_id', $id);
+        $profil->update([
+            'user_id' => $id,
+            'tempat_lahir' => request('tempat_lahir'),
+            'tanggal_lahir' => request('tanggal_lahir'),
+            'jenis_kelamin' => request('jenis_kelamin'),
+            'alamat' => request('alamat'),
+            'no_telp' => request('no_telp'),
+        ]);
+
+        return redirect('/profil');
     }
 
     /**

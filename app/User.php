@@ -36,6 +36,11 @@ class User extends Authenticatable
         return $this->hasOne(Gallery::class);
     }
 
+    public function profils()
+    {
+        return $this->hasOne(Profil::class);
+    }
+
     public function is_admin()
 
     {

@@ -20,9 +20,9 @@
     <!-- left column -->
     <div class="span4" style="text-align:center;">
         <div class="text-center">
-            <img src="img/avatars/{{ $user->avatar }}" class="avatar img-circle img-thumbnail" alt="avatar" style="width:150px;height:150px;">
+            <img src="{{ URL::asset($user->avatar) }}" class="avatar img-circle img-thumbnail" alt="avatar" style="width:150px;height:150px;">
         </div>
-        <a href="/wisata" class="btn btn-small btn-primary" style="margin-top:15px;"></i> Edit Profil</a>
+        <a href="{{route('profil.edit', $user)}}" class="btn btn-small btn-primary" style="margin-top:15px;"></i> Edit Profil</a>
     </div>
     <!-- edit form column -->
     <div class="span8">
@@ -53,7 +53,7 @@
                         <label class="col-md-3 control-label">Tempat Lahir </label>
                     </div>
                     <div class="span4 form-group field">
-                        <p>: {{ $user->email }}</p>
+                        <p>: {{ $user->profils['tempat_lahir'] }}</p>
                     <div class="validation"></div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <label class="col-md-3 control-label">Tanggal Lahir </label>
                     </div>
                     <div class="span4 form-group field">
-                        <p>: {{ $user->email }}</p>
+                        <p>: {{ $user->profils['tanggal_lahir'] }}</p>
                     <div class="validation"></div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         <label class="col-md-3 control-label">Jenis Kelamin </label>
                     </div>
                     <div class="span4 form-group field">
-                        <p>: {{ $user->email }}</p>
+                        <p>: {{ $user->profils['jenis_kelamin'] }}</p>
                     <div class="validation"></div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                         <label class="col-md-3 control-label">Alamat </label>
                     </div>
                     <div class="span4 form-group field">
-                        <p>: {{ $user->email }}</p>
+                        <p>:  {{ $user->profils['alamat'] }}</p>
                     <div class="validation"></div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                         <label class="col-md-3 control-label">No. Telepon </label>
                     </div>
                     <div class="span4 form-group field">
-                        <p>: {{ $user->email }}</p>
+                        <p>: {{ $user->profils['no_telp'] }}</p>
                     <div class="validation"></div>
                     </div>
                 </div>
