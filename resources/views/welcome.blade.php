@@ -36,7 +36,7 @@
 
     <!-- start header -->
     <header>
-      <div class="top" style="height:30px;"></div>
+      <div class="top" style="height:10px;"></div>
       <div class="container">
 
 
@@ -75,6 +75,10 @@
                     @guest
                       <li><a href="{{ route('login') }}" >Login</a></li>
                       <li><a href="{{ route('register') }}">Register</a></li>
+                    @else
+                      @if(Auth::user()->admin == true)
+                      <li><a href="{{ route('login') }}" >Login</a></li>
+                      <li><a href="{{ route('register') }}">Register</a></li>
                       @else
                       <li class="dropdown"><a href="#" style="position:relative; margin-left:50px;">
                         <img src="img/avatars/{{ Auth::user()->avatar }}" alt="" class="img-avatar-header" style="width:20px">
@@ -93,6 +97,8 @@
                             </li>
                         </ul>
                       </li>
+                      @endif
+                      
                       @endguest
                     
                   </ul>
@@ -118,9 +124,9 @@
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
-                <div class="span6">
+                {{-- <div class="span6">
                   <img src="img/slides/camera/slide1/screen.png" alt="" class="animated bounceInDown delay1" />
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -131,9 +137,9 @@
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
-                <div class="span6">
+                {{-- <div class="span6">
                   <img src="img/slides/camera/slide2/iMac.png" alt="" />
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -144,9 +150,9 @@
           <div class="camera_caption fadeFromLeft">
             <div class="container">
               <div class="row">
-                <div class="span12 aligncenter">
+                {{-- <div class="span12 aligncenter">
                   <img src="img/slides/camera/slide3/browsers.png" alt="" class="animated bounceInDown delay1" />
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -199,7 +205,7 @@
               <div class="grid cs-style-4">
                 
                 @foreach ($dataWisata as $item)
-                <div class="span3">
+                {{-- <div class="span3">
                   <div class="item">
                     <figure>
                       <div><img src="{{ URL::asset($item->wisata_gambar) }}" alt="" /></div>
@@ -211,7 +217,27 @@
                       </p>
                     </div>
                   </div>
-                </div>            
+                </div>             --}}
+                <div class="span3">
+                  <div class="item">
+                    <figure>
+                      <div><img src="{{ URL::asset($item->wisata_gambar) }}" alt="" /></div>
+                      <figcaption>
+                        <div>
+                          <span>
+                            <a href="{{ route('wisataDetail', $item ) }}"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
+							            	</span>
+                          <span>
+								
+								          </span>
+                        </div>
+                      </figcaption>
+                    </figure>
+                    <div style="text-align:center; padding-top:10px;">
+                     <h5>{{ $item->wisata_nama }}</h5>
+                    </div>
+                  </div>
+                </div>
                 @endforeach
                 
               </div>

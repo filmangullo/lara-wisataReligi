@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Wisata;
-use DB;
+use App\Tahun;
+use App\Bulan;
+use App\Tanggal;
 
-class WelcomeController extends Controller
+use Illuminate\Http\Request;
+use Carbon;
+
+class KalenderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +18,15 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $dataWisata = Wisata::latest()->paginate(4);
-        return view('welcome',compact('dataWisata'));
+        $now = Carbon\Carbon::now()->format('m');
+
+        $next = $now + 1;
+        // dd ($next);
+        $bulanAktif = Bulan::find($now);
+
+        // dd($bulanAktif);
+
+        return view('kalender', compact('bulanAktif'));
     }
 
     /**
@@ -43,21 +53,21 @@ class WelcomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Kalender  $kalender
      * @return \Illuminate\Http\Response
      */
-    public function show(Wisata $wisata)
+    public function show(Kalender $kalender)
     {
-        return view('wisataDetail', compact('wisata'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Kalender  $kalender
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kalender $kalender)
     {
         //
     }
@@ -66,10 +76,10 @@ class WelcomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Kalender  $kalender
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Kalender $kalender)
     {
         //
     }
@@ -77,10 +87,10 @@ class WelcomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Kalender  $kalender
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Kalender $kalender)
     {
         //
     }

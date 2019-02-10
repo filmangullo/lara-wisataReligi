@@ -40,7 +40,8 @@ Route::resource('kontak', 'KontakController');
 
 Route::resource('tentang', 'TentangController');
 
-Route::resource('/kalender', 'EventController');
+Route::resource('/kalender', 'KalenderController');
+Route::get('/kelender', 'KalenderController@index')->name('kalender');
 
 Route::resource('/artikel', 'ArtikelController');
 Route::get('/artikel/{artikel}', 'ArtikelController@show')->name('artikelDetail');
@@ -48,7 +49,6 @@ Route::get('/artikel/{artikel}', 'ArtikelController@show')->name('artikelDetail'
 Route::resource( 'profil', 'ProfilController');
 Route::get( 'profil/{id}/edit', 'ProfilController@edit')->name('profil.edit');
 Route::patch( 'profil/{id}/update', 'ProfilController@update')->name('profil.update');
-
 
 
 
@@ -71,6 +71,10 @@ Route::middleware(['role', 'auth'])->group(function () {
     Route::patch('dashboard/wisata/{id}/edit', 'AdminWisataController@update')->name('wisata.update');
     Route::resource('dashboards/wisataPost', 'PostWisataController');
     Route::post('dashboards/wisataPost', 'PostWisataController@store')->name('wisata.store');
+
+    Route::resource('dashboards/kalender', 'AdminKalenderController');
+    Route::resource('dashboards/kalenderPost', 'PostKalenderController');
+    Route::post('dashboards/kalenderPost', 'PostKalenderController@store')->name('kalender.store');
 
     Route::resource('dashboards/eventPost', 'PostEventController');
     Route::post('dashboards/eventPost', 'PostEventController@store')->name('event.store');

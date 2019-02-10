@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class IsAdmin
+class Free
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,6 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->check() && $request->user()->admin == 0) {
-            return redirect()->guest('home');
-        }
         return $next($request);
     }
 }

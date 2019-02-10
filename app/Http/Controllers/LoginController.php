@@ -19,6 +19,7 @@ class LoginController extends Controller
             return redirect()->to($user->redirectUrlAfterLogin());
         }
         return redirect()->back();
+        
     }
 
     public function __construct()

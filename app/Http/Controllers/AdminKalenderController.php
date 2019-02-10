@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Wisata;
-use DB;
+use App\Tahun;
+use App\Bulan;
+use App\Tanggal;
+use App\Kalender;
 
-class WelcomeController extends Controller
+class AdminKalenderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,9 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $dataWisata = Wisata::latest()->paginate(4);
-        return view('welcome',compact('dataWisata'));
+        $peristiwa = Kalender::All();
+
+        return view('admin.kalender', compact('peristiwa'));
     }
 
     /**
@@ -46,9 +49,9 @@ class WelcomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Wisata $wisata)
+    public function show($id)
     {
-        return view('wisataDetail', compact('wisata'));
+        //
     }
 
     /**

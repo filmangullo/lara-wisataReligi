@@ -27,7 +27,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img src="{{ URL::asset('dashboard/img/logo.png') }}" />
+                        <img src="{{ URL::asset('dashboard/img/logo.jpg') }}" />
 
                     </a>
                     
@@ -54,11 +54,11 @@
                         <a href="/dashboards" ><i class="fa fa-desktop "></i>Dashboard </a>
                     </li>
                     <li>
-                        <a href="ui.html"><i class="fa fa-table "></i>UI Elements  </a>
+                        <a href="/dashboards/kalender"><i class="fa fa-table "></i>Kalender</a>
                     </li>
-                    <li>
-                        <a href="blank.html"><i class="fa fa-edit "></i>Blank Page  </a>
-                    </li>
+                    {{-- <li>
+                        <a href=""><i class="fa fa-edit "></i>Even</a>
+                    </li> --}}
                     <li>
                         <a href="/dashboards/wisata"><i class="fa fa-qrcode "></i>Wisata</a>
                     </li>
@@ -67,10 +67,10 @@
                     </li>
 
                     <li>
-                        <a href="/dashboards/user"><i class="fa fa-edit "></i>User </a>
+                        <a href="/dashboards/user"><i class="fa fa-users"></i>User </a>
                     </li>
                     <li>
-                        <a href="/dashboards/inbox"><i class="fa fa-table "></i>Inbox</a>
+                        <a href="/dashboards/inbox"><i class="fa fa-comments-o"></i>Inbox</a>
                     </li>
                      <li>
                         <a href="#"><i class="fa fa-edit "></i>Logout </a>

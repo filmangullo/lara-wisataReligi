@@ -21,11 +21,11 @@
         <div class="span12">
           <div class="row">
             <section id="team">
-              <ul id="thumbs" class="team">
+              <div id="thumbs" class="team">
 
                 <!-- Item Project and Filter Name -->
                 @foreach ($data as $wisata)
-                <li class="item-thumbs span3 design" data-id="id-0" data-type="design">
+                <div class="item-thumbs span3 design" data-id="id-0" data-type="design">
                   
                   <div class="team-box thumbnail">
                     <a href="{{ route('wisataDetail', $wisata ) }}">
@@ -40,16 +40,43 @@
                     </div>
                   </div>
                   
-                </li>
+                </div>
                                     
                 @endforeach
                 <!-- End Item Project -->
-              </ul>
+                
+              </div>
+              
             </section>
 
           </div>
+          
         </div>
       </div>
+      
     </div>
+    
+  </section>
+  <section id="content">
+    <div class="container">
+      <div class="row">
+        <div class="span12" style="text-align:center;">
+          <div class="row">
+            <section id="team">
+              <div id="thumbs" class="team">
+                  <div id="pagination" style="text-align:center;">
+                      {{ $data->render() }}
+                    </div>
+              </div>
+              
+            </section>
+
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
   </section>
 @endsection

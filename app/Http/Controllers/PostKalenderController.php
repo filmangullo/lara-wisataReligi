@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Wisata;
-use DB;
+use App\Tanggal;
+use App\bulan;
+use App\Kalender;
 
-class WelcomeController extends Controller
+class PostKalenderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $dataWisata = Wisata::latest()->paginate(4);
-        return view('welcome',compact('dataWisata'));
+        return view ('admin.kalenderPost');
     }
 
     /**
@@ -37,7 +37,15 @@ class WelcomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kalender = new Kalender;
+
+        $kalender->tahun_id = 1;
+        $kalender->bulan_id = $request->bulan_id;
+        $kalender->tanggal_id = $request->tanggal_id;
+        $kalender->nama_peristiwa = $request->nama_peristiwa;
+        $kalender->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -46,9 +54,9 @@ class WelcomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Wisata $wisata)
+    public function show($id)
     {
-        return view('wisataDetail', compact('wisata'));
+        //
     }
 
     /**

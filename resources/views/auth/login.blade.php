@@ -58,8 +58,8 @@
                                     Login
                                 </button>
                             </div>
-                            <p>{{__('login.ketreg') }} <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('login.ketreg') }}
+                            <p>{{__('login.ketreg') }} <a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('login.linkreg') }}
                                 </a></p>
                             
                         </div>

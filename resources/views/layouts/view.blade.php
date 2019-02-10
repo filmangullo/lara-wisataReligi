@@ -39,7 +39,7 @@
   
     <!-- start header -->
     <header>
-      <div class="top" style="height:30px;"></div>
+      <div class="top" style="height:10px;"></div>
       <div class="container">
 
 
@@ -79,23 +79,28 @@
                       <li><a href="{{ route('login') }}" >Login</a></li>
                       <li><a href="{{ route('register') }}">Register</a></li>
                       @else
-                      <li class="dropdown"><a href="#" style="position:relative; margin-left:50px;">
-                        <img src="img/avatars/{{ Auth::user()->avatar }}" alt="" class="img-avatar-header" style="width:20px">
-                        {{ Auth::user()->name }}</a>
-                        <ul class="dropdown-menu sub-menu-level1">
-                            <li><a href="{{ url('/profil')}}"> Profil</a></li>
-                            <li><a href="{{ url('/bookmark')}}"> Bookmark</a></li>
-                            <li><a class="ion-ios-log-out" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                      </li>
+                        @if(Auth::user()->admin == true)
+                        <li><a href="{{ route('login') }}" >Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                        <li class="dropdown"><a href="#" style="position:relative; margin-left:50px;">
+                          <img src="img/avatars/{{ Auth::user()->avatar }}" alt="" class="img-avatar-header" style="width:20px">
+                          {{ Auth::user()->name }}</a>
+                          <ul class="dropdown-menu sub-menu-level1">
+                              <li><a href="{{ url('/profil')}}"> Profil</a></li>
+                              <li><a href="{{ url('/bookmark')}}"> Bookmark</a></li>
+                              <li><a class="ion-ios-log-out" href="{{ route('logout') }}"
+                                      onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                      Logout
+                                  </a>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                      {{ csrf_field() }}
+                                  </form>
+                              </li>
+                          </ul>
+                        </li>
+                        @endif
                       @endguest
                   </ul>
                 </nav>
