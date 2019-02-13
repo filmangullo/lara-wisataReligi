@@ -94,4 +94,124 @@ class KalenderController extends Controller
     {
         //
     }
+
+    public function jan()
+    {
+        // dd ($next);
+        $bulanJan = Bulan::find('1');
+
+        // dd($bulanAktif);
+
+        return view('kalender.januari', compact('bulanJan'));
+    }
+
+    public function feb()
+    {
+        // dd ($next);
+        $bulanFeb = Bulan::find('2');
+
+        // dd($bulanAktif);
+
+        return view('kalender.februari', compact('bulanFeb'));
+    }
+
+    public function mar()
+    {
+        // dd ($next);
+        $bulanMar = Bulan::find('3');
+
+        // dd($bulanAktif);
+
+        return view('kalender.maret', compact('bulanMar'));
+    }
+
+    public function apr()
+    {
+        // dd ($next);
+        $bulanApr = Bulan::find('4');
+
+        // dd($bulanAktif);
+
+        return view('kalender.april', compact('bulanApr'));
+    }
+
+    public function mei()
+    {
+        // dd ($next);
+        $bulanMei = Bulan::find('5');
+
+        // dd($bulanAktif);
+
+        return view('kalender.mei', compact('bulanMei'));
+    }
+
+    public function jun()
+    {
+        // dd ($next);
+        $bulanJun = Bulan::find('6');
+
+        // dd($bulanAktif);
+
+        return view('kalender.juni', compact('bulanJun'));
+    }
+
+    public function jul()
+    {
+        // dd ($next);
+        $bulanJul = Bulan::find('7');
+
+        // dd($bulanAktif);
+
+        return view('kalender.juli', compact('bulanJul'));
+    }
+
+    public function agu()
+    {
+        // dd ($next);
+        $bulanAgu = Bulan::find('8');
+
+        // dd($bulanAktif);
+
+        return view('kalender.agustus', compact('bulanAgu'));
+    }
+
+    public function sep()
+    {
+        // dd ($next);
+        $bulanSep = Bulan::find('9');
+
+        // dd($bulanAktif);
+
+        return view('kalender.september', compact('bulanSep'));
+    }
+
+    public function okt()
+    {
+        // dd ($next);
+        $bulanOkt = Bulan::find('10');
+
+        // dd($bulanAktif);
+
+        return view('kalender.oktober', compact('bulanOkt'));
+    }
+
+    public function nov()
+    {
+        // dd ($next);
+        $bulanNov = Bulan::find('11');
+
+        // dd($bulanAktif);
+
+        return view('kalender.november', compact('bulanNov'));
+    }
+
+    public function des()
+    {
+        // dd ($next);
+        $bulanDes = Bulan::find('12');
+
+        // dd($bulanAktif);
+
+        return view('kalender.desember', compact('bulanDes'));
+    }
 }

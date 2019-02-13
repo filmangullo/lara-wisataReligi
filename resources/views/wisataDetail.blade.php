@@ -77,11 +77,6 @@
     <div class="modal-content">
       <form action="{{ route('post.bookmark.store', $wisata) }}" method="POST">
         {{ csrf_field() }}
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
         <div class="modal-body">
           Bookmark Wisata {{ $wisata->wisata_nama }}..?
         </div>
@@ -93,7 +88,8 @@
         <input type="hidden" name="wisata_golongan" value="{{$wisata->wisata_golongan}}">
         <input type="hidden" name="map" value="{{ $wisata->map }}">
 
-        <div class="modal-footer">
+        <div class="modal-body" style="float:right;">
+          <input type="button" value="Cancel" class="btn btn-default" data-dismiss="modal">
           <input type="submit" value="OK" class="btn btn-primary">
         </div>
       </form>

@@ -23,14 +23,14 @@
         <div class="container" style="margin-top:-30px;">
                 <div class="row">
                   <div class="span12">
-                    <a href="/januari" class="btn btn-success btn-large animated fadeInUp"> < </a>
-                    <a href="#" class="btn btn-success btn-large animated fadeInUp" style="float:right;"> > </a>
+                    <a href="/februari" class="btn btn-success btn-large animated fadeInUp"> < </a>
+                    <a href="/april" class="btn btn-success btn-large animated fadeInUp" style="float:right;"> > </a>
                   </div>
                 </div>
               </div>
   <div class="container">
       <div class="span8" style="margin-left:auto; margin-right:auto;">
-      <h4>{{$bulanAktif->nama_bulan}} 2019</h4>
+      <h4>{{$bulanMar->nama_bulan}} 2019</h4>
             <div class="portfolio-detail">
                 <div class="row">
                     <div class="span12" style="background-color:darkgreen; padding-top:20px ">
@@ -89,7 +89,7 @@
             <div class="portfolio-detail">
                 <div class="row">
                     <div class="span12" style="background-color:azure; margin-top:-30px;">
-                        @foreach ($bulanAktif->tanggals()->get() as $bulan)
+                        @foreach ($bulanMar->tanggals()->get() as $bulan)
                         <div class="span1" style="width:127px; text-align:center; padding-top:30px;">
                             <div class="item">
                                 <div>
@@ -112,8 +112,8 @@
             <h4>Peristiwa</h4>
             
             <ul class="portfolio-categ filter">
-                @foreach ($bulanAktif->kalenders()->get() as $peristiwa)
-                <li class="all active"><a href="#" disable>{{ $peristiwa->tanggal_id }} {{$bulanAktif->nama_bulan}} {{ $peristiwa->nama_peristiwa }}</a></li><br>
+                @foreach ($bulanMar->kalenders()->get() as $peristiwa)
+                <li class="all active"><a href="#" disable>{{ $peristiwa->tanggal_id }} {{$bulanMar->nama_bulan}} {{ $peristiwa->nama_peristiwa }}</a></li><br>
                 @endforeach
               </ul>
           </div>

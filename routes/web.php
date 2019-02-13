@@ -42,6 +42,19 @@ Route::resource('tentang', 'TentangController');
 
 Route::resource('/kalender', 'KalenderController');
 Route::get('/kelender', 'KalenderController@index')->name('kalender');
+Route::get('/januari', 'KalenderController@jan')->name('bulanjanuari');
+Route::get('/februari', 'KalenderController@feb')->name('bulanfebruari');
+Route::get('/maret', 'KalenderController@mar')->name('bulanmaret');
+Route::get('/april', 'KalenderController@apr')->name('bulanapril');
+Route::get('/mei', 'KalenderController@mei')->name('bulanmei');
+Route::get('/juni', 'KalenderController@jun')->name('bulanjuni');
+Route::get('/juli', 'KalenderController@jul')->name('bulanjuli');
+Route::get('/agustus', 'KalenderController@agu')->name('bulanagustus');
+Route::get('/september', 'KalenderController@sep')->name('bulanseptember');
+Route::get('/oktober', 'KalenderController@okt')->name('bulanoktober');
+Route::get('/november', 'KalenderController@nov')->name('bulannovember');
+Route::get('/desember', 'KalenderController@des')->name('bulandesember');
+
 
 Route::resource('/artikel', 'ArtikelController');
 Route::get('/artikel/{artikel}', 'ArtikelController@show')->name('artikelDetail');
