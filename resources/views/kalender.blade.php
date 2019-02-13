@@ -24,7 +24,7 @@
                 <div class="row">
                   <div class="span12">
                     <a href="/januari" class="btn btn-success btn-large animated fadeInUp"> < </a>
-                    <a href="#" class="btn btn-success btn-large animated fadeInUp" style="float:right;"> > </a>
+                    <a href="/maret" class="btn btn-success btn-large animated fadeInUp" style="float:right;"> > </a>
                   </div>
                 </div>
               </div>
