@@ -27,7 +27,15 @@
                 @foreach ($dataBookmarks as $wisata)
                 @if($wisata->user_id == $user->id)
                 <li class="item-thumbs span3 design" data-id="id-0" data-type="design">
+                  
                   <div class="team-box thumbnail">
+                      <div style="float:right; margin-bottom:-20px; margin-top:-20px; margin-right:-20px;">
+                          <form action="{{ route('bookmark.delete', $wisata->id)}}" method="post">
+                              {{csrf_field()}}
+                              {{method_field('DELETE')}}
+                              <button type="submit" class="btn btn-default">X</button>
+                          </form> 
+                      </div>
                     <a href="{{ route('wisataDetail', $wisata ) }}">
                     <img src="{{ $wisata->wisata_gambar }}"/>
                     </a>

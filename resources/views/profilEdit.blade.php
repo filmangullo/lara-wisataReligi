@@ -55,6 +55,15 @@
                         </div>
                     </div>
                     <div class="span12 form-group">
+                            <div class="span2 form-group">
+                                <label class="col-md-3 control-label">Password :</label>
+                            </div>
+                            <div class="span4 form-group field">
+                            <input type="password" name="password" id="password"value="{{ $user->password }}" data-rule="minlen:4"  />
+                            <div class="validation"></div>
+                            </div>
+                        </div>
+                    <div class="span12 form-group">
                         <div class="span2 form-group">
                             <label class="col-md-3 control-label">Tempat Lahir :</label>
                         </div>

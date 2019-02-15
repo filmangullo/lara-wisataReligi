@@ -14,7 +14,7 @@ class AdminInboxController extends Controller
      */
     public function index()
     {
-        $inboxs = Kontak::all();
+        $inboxs = Kontak::latest()->paginate(10000000);
 
         return view('admin.inbox', compact('inboxs'));
 
@@ -83,6 +83,10 @@ class AdminInboxController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // dd($id);
+        $delete = Kontak::FindOrFail($id);
+        $delete -> delete();
+
+        return redirect()->back();
     }
 }

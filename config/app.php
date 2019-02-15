@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         //fullcalendar
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
         
 
         /*

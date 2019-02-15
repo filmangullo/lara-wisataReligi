@@ -90,9 +90,20 @@
                 <div class="row">
                     <div class="span12" style="background-color:azure; margin-top:-30px;">
                         @foreach ($bulanAktif->tanggals()->get() as $bulan)
+                        
                         <div class="span1" style="width:127px; text-align:center; padding-top:30px;">
+                       
                             <div class="item">
+                                    @if( $bulan->tanggal == $now_day)
+                                <div style="background-color:coral; width: 200px;
+                                height: 30px;
+                                width: 30px;
+                                background: #dac52c;
+                                border-radius: 100%;
+                                margin:0px auto;">
+                                @else
                                 <div>
+                                @endif
                                 <h5>{{ $bulan->tanggal }}</h5>
                                 </div>
                             </div>

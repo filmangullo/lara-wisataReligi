@@ -37,7 +37,13 @@
                 @elseif ($event->golongan == 'Muhammad Diyah') 
                   <li class="item-thumbs span6 web" data-id="id-0" data-type="icon">
                 @endif
-                  <h3>Oke</h3>
+                @if($event->tanggal_event == $now_day)
+                  <h3>Today</h3>
+                @elseif ($event->tanggal_event < $now_day)
+                  <h3>Has Ended</h3>
+                @elseif ($event->tanggal_event > $now_day)
+                <h3>Comming Soon</h3>
+                @endif
                   <div class="item">
                     <figure>
                       <div><img src="{{ URL::asset($event->gambar_event) }}" alt="" /></div>
@@ -50,6 +56,7 @@
                       </figcaption>
                     </figure>
                   </div>
+                <h5>{{$event->tanggal_event}}</h5>
                 </li>
                 <!-- End Item Project -->
                 @endforeach

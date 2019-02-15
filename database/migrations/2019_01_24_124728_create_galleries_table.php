@@ -18,6 +18,7 @@ class CreateGalleriesTable extends Migration
             $table->integer('wisata_id')->unsigned()->index();
             $table->unsignedInteger('user_id')->unsigned()->index();
             $table->string('gallery_gambar');
+            $table->integer('status')->default('0');
             $table->timestamps();
 
             $table->foreign('wisata_id')->references('id')->on('wisatas')->onDelete('cascade');

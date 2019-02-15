@@ -20,13 +20,16 @@ class KalenderController extends Controller
     {
         $now = Carbon\Carbon::now()->format('m');
 
+        $now_day = Carbon\Carbon::now()->format('d');
+
+        // dd($now);
         $next = $now + 1;
         // dd ($next);
         $bulanAktif = Bulan::find($now);
 
-        // dd($bulanAktif);
+        // // dd($bulanAktif);
 
-        return view('kalender', compact('bulanAktif'));
+        return view('kalender', compact('bulanAktif','now_day'));
     }
 
     /**

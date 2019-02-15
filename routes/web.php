@@ -28,6 +28,7 @@ Route::get('/wisata/{wisata}', 'WisataController@show')->name('wisataDetail');
 
 Route::post('/wisata/{wisata}/bookmark', 'PostBookmarkController@store')->name('post.bookmark.store')->middleware(['auth']);
 Route::get('/bookmark', 'PostBookmarkController@index')->name('bookmark')->middleware(['auth']);
+Route::delete('/bookmark/{id}/destroy', 'PostBookmarkController@destroy')->name('bookmark.delete')->middleware(['auth']);
 
 Route::get('/wisata/{wisata}/gallery', 'WisataController@gallery')->name('gallery');
 Route::get('/wisata/{wisata}/gallery/upload', 'WisataController@galleryUpload')->name('galleryUpload')->middleware(['auth']);
@@ -85,6 +86,10 @@ Route::middleware(['role', 'auth'])->group(function () {
     Route::resource('dashboards/wisataPost', 'PostWisataController');
     Route::post('dashboards/wisataPost', 'PostWisataController@store')->name('wisata.store');
 
+    Route::resource('dashboards/galeri', 'AdminGalleriController');
+    Route::patch('dashboard/galeri/{id}', 'AdminGalleriController@update')->name('galleri.update');
+    Route::delete('dashboard/galeri/{id}/destroy', "AdminGalleriController@destroy")->name('galleri.destroy');
+
     Route::resource('dashboards/kalender', 'AdminKalenderController');
     Route::resource('dashboards/kalenderPost', 'PostKalenderController');
     Route::post('dashboards/kalenderPost', 'PostKalenderController@store')->name('kalender.store');
@@ -93,6 +98,7 @@ Route::middleware(['role', 'auth'])->group(function () {
     Route::post('dashboards/eventPost', 'PostEventController@store')->name('event.store');
 
     Route::resource('dashboards/inbox', 'AdminInboxController');
+    Route::delete('dashboards/inbox/{id}/destroy', 'AdminInboxController@destroy')->name('kontak.destroy');
 
     Route::resource('dashboards/user', 'AdminUserController');
     Route::delete( 'dashboard/user/{id}/destroy', "AdminUserController@destroy")->name('user.destroy');

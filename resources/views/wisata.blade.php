@@ -19,13 +19,27 @@
     <div class="container">
       <div class="row">
         <div class="span12">
+            <ul class="portfolio-categ filter">
+                <li class="all active"><a href="#">All</a></li>
+                <li class="web"><a href="#" title="">Nahdlatul Ulama</a></li>
+                <li class="icon"><a href="#" title="">Muhammad Diyah</a></li>
+              </ul>
+        </div>
+        <div class="span12">        
           <div class="row">
             <section id="team">
               <div id="thumbs" class="team">
 
                 <!-- Item Project and Filter Name -->
                 @foreach ($data as $wisata)
-                <div class="item-thumbs span3 design" data-id="id-0" data-type="design">
+                @if($wisata->wisata_golongan == 'Nahdlatul Ulama')
+                {{-- <li class="item-thumbs span6 web" data-id="id-0" data-type="web"> --}}
+                    <div class="item-thumbs span3 web" data-id="id-0" data-type="web">
+                @elseif ($wisata->wisata_golongan == 'Muhammad Diyah') 
+                  {{-- <li class="item-thumbs span6 web" data-id="id-0" data-type="icon"> --}}
+                      <div class="item-thumbs span3 web" data-id="id-0" data-type="icon">
+                @endif
+                {{-- <div class="item-thumbs span3 design" data-id="id-0" data-type="web"> --}}
                   
                   <div class="team-box thumbnail">
                     <a href="{{ route('wisataDetail', $wisata ) }}">

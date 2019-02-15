@@ -56,8 +56,7 @@
 	<div class="row">
 		<div class="row">
         @foreach ($wisata->gallerys()->get() as $gallery )
-
-    
+        @if($gallery->status == '1')       
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="{{ URL::asset($gallery->gallery_gambar) }}"
@@ -67,6 +66,7 @@
                          alt="Another alt text" style="heigh:550px; width:800px; ">
                 </a>
             </div>
+            @endif
             @endforeach
         </div>
         <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

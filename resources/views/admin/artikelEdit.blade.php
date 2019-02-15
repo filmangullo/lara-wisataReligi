@@ -26,7 +26,7 @@
                             <label>Isi Artikel</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-                                <textarea name="isi_artikel" rows="5" data-rule="required" class="form-control">{{ $artikelEdit->isi_artikel }}</textarea>
+                                <textarea name="isi_artikel" rows="5" id="article-ckeditor" data-rule="required" class="form-control">{{ $artikelEdit->isi_artikel }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -61,4 +61,11 @@
             </form>
         </div>
     </div>
+@endsection
+
+@section('script')
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'article-ckeditor' );
+</script>
 @endsection

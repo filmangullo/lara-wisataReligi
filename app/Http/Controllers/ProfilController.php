@@ -97,7 +97,8 @@ class ProfilController extends Controller
         $user = User::find($id);
         $user->update([
             'name' => request('name'),
-            'email' => request('email')
+            'email' => request('email'),
+            'password' => bcrypt(request('password'))
         ]);
 
         $profil = Profil::where('user_id', $id);

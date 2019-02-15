@@ -17,9 +17,9 @@
               </div>
               <img src="img/dummies/blog/img1.jpg" alt="" />
             </div>
-            <p>
-              {{ $artikel->isi_artikel}}
-            </p>
+            
+              {!! $artikel->isi_artikel !!}
+          
 
 
 

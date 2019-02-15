@@ -18,33 +18,49 @@
 <section id="content">
 <div class="container">
   <div class="row">
+      @if($message=Session::get('successUpload'))
+      <div class="alert alert-success alert-dismissible">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success!</strong> {{$message}}
+        </div>
+      @endif
 
+      @if($message=Session::get('successBookmark'))
+      <div class="alert alert-info alert-dismissible">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Info!</strong> {{$message}}
+        </div>
+        @endif
       <div class="clearfix"></div>
       <div class="row">
         <section id="projects">
           <ul id="thumbs" class="grid cs-style-4 portfolio">
 
-            <li class="item-thumbs span4 design" data-id="id-1" data-type="icon">
-                <div class="item">
-                    {{ $wisata->wisata_alamat}}
-                </div>
-
-              </li>
-
-            <li class="item-thumbs span4 design" data-id="id-1" data-type="icon">
+            <li class="item-thumbs span5 design" data-id="id-1" data-type="icon">
               <div class="item" >
                   <div><img src="{{$wisata->wisata_gambar}}" alt="" /></div>
               </div>
             </li>
   
-            <li class="item-thumbs span4 design" data-id="id-1" data-type="icon">
+            <li class="item-thumbs span7 design" data-id="id-1" data-type="icon">
                 <div class="item" style="height:275px;">
                   
-                  <iframe src="{{ $wisata->map}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  <iframe src="{{ $wisata->map}}" width="725" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
               </li>
           </ul>
         </section>
+        <section id="projects">
+            <ul id="thumbs" class="grid cs-style-4 portfolio">
+  
+              <li class="item-thumbs span12 design" data-id="id-1" data-type="icon">
+                  <div class="item">
+                      {{ $wisata->wisata_alamat}}
+                  </div>
+  
+                </li>
+            </ul>
+          </section>
 
       </div>
     </div>

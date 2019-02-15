@@ -56,10 +56,10 @@
                     <li>
                         <a href="/dashboards/kalender"><i class="fa fa-table "></i>Kalender</a>
                     </li>
-                    {{-- <li>
-                        <a href=""><i class="fa fa-edit "></i>Even</a>
-                    </li> --}}
                     <li>
+                        <a href="/dashboards/galeri"><i class="fa fa-edit "></i>Gallery</a>
+                    </li> 
+                    <li> 
                         <a href="/dashboards/wisata"><i class="fa fa-qrcode "></i>Wisata</a>
                     </li>
                     <li>
@@ -120,7 +120,10 @@
     <script src="assets/js/bootstrap.min.js"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
+
+    @yield('script')
     
-   
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
 </body>
 </html>

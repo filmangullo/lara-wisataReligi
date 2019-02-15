@@ -7,6 +7,7 @@ use DB;
 use App\Wisata;
 use Image;
 use App\Gallery;
+use Carbon;
 
 class WisataController extends Controller
 {
@@ -101,9 +102,10 @@ class WisataController extends Controller
           // 'gallery_gambar' => 'app/public/files/'.$new_name
           'gallery_gambar' => '/storage/gallery/'.$new_name
       ]);
-        return redirect()->back()->with('success', 'Image Uploaded Successfully');
+        return redirect()->route('wisataDetail', ['wisata' => $wisata->id])->with('successUpload', 'Gambar anda akan di tampilkan setelah disetujui oleh Admin');
+        
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -112,7 +114,11 @@ class WisataController extends Controller
      */
     public function event(Wisata $wisata)
     {
-        return view('event', compact('wisata'));
+        $now_day = Carbon\Carbon::now();
+
+        // dd($now_day);
+
+        return view('event', compact('wisata', 'now_day'));
     }
 
     /**

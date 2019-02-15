@@ -11,18 +11,25 @@
                 <thead >
                     <tr>
                         <th style="width:10%;">#</th>
+                        <th style="width:10%;">Tanggal</th>
                         <th style="width:30%;">Topik</th>
                         <th style="width:40%;">Pesan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($inboxs as $inbox)
+                    @foreach ($inboxs as $index=> $inbox)
                         <tr class="warning">
-                        <td>1</td>
+                        <td>{{ $index+1 }}</td>
+                        <td>{{ $inbox->created_at }}</td>
                         <td>{{ $inbox->topik }}</td>
-                        <td>{{str_limit($inbox->pesan), 200, '...'}}</td>
-                        <td><a href="#" class="btn btn-info">Show</a> <a href="#" class="btn btn-danger">Delete</a></td>
+                        <td>{{ $inbox->pesan }}</td>
+                        {{-- <td>{{str_limit($inbox->pesan), 200, '...'}}</td> --}}
+                        <td> <form action="{{ route('kontak.destroy', $inbox->id)}}" method="post">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form> </td>
                         
                     </tr>
                     @endforeach
