@@ -85,6 +85,9 @@ class AdminKalenderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $galleriDelete = Kalender::FindOrFail($id);
+        $galleriDelete -> delete();
+
+        return redirect()->back();
     }
 }

@@ -93,6 +93,7 @@ Route::middleware(['role', 'auth'])->group(function () {
     Route::resource('dashboards/kalender', 'AdminKalenderController');
     Route::resource('dashboards/kalenderPost', 'PostKalenderController');
     Route::post('dashboards/kalenderPost', 'PostKalenderController@store')->name('kalender.store');
+    Route::delete( 'dashboard/kalender/{id}/destroy', "AdminKalenderController@destroy")->name('peristiwa.destroy');
 
     Route::resource('dashboards/eventPost', 'PostEventController');
     Route::post('dashboards/eventPost', 'PostEventController@store')->name('event.store');

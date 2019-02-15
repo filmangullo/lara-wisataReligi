@@ -20,18 +20,19 @@
                     @foreach ($peristiwa as $no=> $index)
                         <tr class="warning">
                         <td>{{$no+1}}</td>
-                        @foreach ($peristiwa as $bulan)
-                        <td>{{$bulan->nama_bulan}}</td>
-                        @endforeach
+                        <td>{{$index->tanggal_id}} / {{$index->bulan_id}} / 2019</td>
                         <td>{{$index->nama_peristiwa}}</td>
-                        <td><a href="#" class="btn btn-info">Show</a> <a href="#" class="btn btn-danger">Delete</a></td>
+                        <td> 
+                            <form action="{{ route('peristiwa.destroy', $index->id)}}" method="post">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                                
+                            </form>
+                        </td>
                         
                     </tr>
                     @endforeach
-
-                    @foreach ($peristiwa as $bulan)
-                        <td>{{$bulan->nama_bulan}}</td>
-                        @endforeach
                     
                     
                 </tbody>
