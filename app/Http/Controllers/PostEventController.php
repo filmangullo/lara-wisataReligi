@@ -50,7 +50,8 @@ class PostEventController extends Controller
             'nama_event' => request('nama_event'),
             'gambar_event' => '/img/event/'.$filename,
             'tanggal_event' => request('tanggal_event'),
-            'golongan' => request('golongan'),
+            'jam_event' => request('jam_event'),
+            'golongan' => request('golongan')
         ]);
         }
         return redirect()->back();
