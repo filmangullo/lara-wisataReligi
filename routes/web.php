@@ -79,6 +79,9 @@ Route::middleware(['role', 'auth'])->group(function () {
     Route::resource('dashboards/artikelPost', 'PostArtikelController');
     Route::post('dashboards/artikelPost', 'PostArtikelController@store')->name('artikel.store');
 
+    Route::resource('dashboards/event', 'AdminEventController');
+    Route::delete( 'dashboard/event/{id}/destroy', 'AdminEventController@destroy')->name('event.destroy');
+
     Route::resource('dashboards/wisata', 'AdminWisataController');
     Route::delete('dashboard/wisata/{id}/destroy', "AdminWisataController@destroy")->name('wisata.destroy');
     Route::get('dashboard/wisata/{id}/edit', 'AdminWisataController@edit')->name('wisata.edit');

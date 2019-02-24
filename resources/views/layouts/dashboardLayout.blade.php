@@ -59,6 +59,9 @@
                     <li>
                         <a href="/dashboards/galeri"><i class="fa fa-edit "></i>Gallery</a>
                     </li> 
+                    <li>
+                        <a href="/dashboards/event"><i class="fa fa-rocket "></i>Event</a>
+                    </li> 
                     <li> 
                         <a href="/dashboards/wisata"><i class="fa fa-qrcode "></i>Wisata</a>
                     </li>
