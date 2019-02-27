@@ -24,6 +24,21 @@ class WisataController extends Controller
 
     }
 
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->get('cari');
+ 
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$data = Wisata::where('wisata_nama','LIKE','%'.$cari.'%')->paginate(8);
+ 
+            // mengirim data pegawai ke view index
+            
+            // dd ($data);
+            return view('wisata', compact('data'));
+ 
+	}
+
     /**
      * Show the form for creating a new resource.
      *

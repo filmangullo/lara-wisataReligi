@@ -1,0 +1,1 @@
+>>>>>            pattern="^\d{12}$"  ->telpon format

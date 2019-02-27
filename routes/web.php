@@ -24,6 +24,7 @@ Route::post('/login/custom', [
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/wisata', 'WisataController@index')->name('wisata');
+Route::get('cari', 'WisataController@cari')->name('wisata.cari');
 Route::get('/wisata/{wisata}', 'WisataController@show')->name('wisataDetail');
 
 Route::post('/wisata/{wisata}/bookmark', 'PostBookmarkController@store')->name('post.bookmark.store')->middleware(['auth']);
