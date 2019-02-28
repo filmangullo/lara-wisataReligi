@@ -61,7 +61,7 @@
                             <label>Jam Event</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-                            <input type="text" name="jam_event"  placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="time" name="jam_event"  placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
                         </div>
                     </div>
                 </div>

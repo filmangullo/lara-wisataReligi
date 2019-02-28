@@ -39,6 +39,7 @@ class PostArtikelController extends Controller
 
         $artikel->judul_artikel = $request->judul_artikel;
         $artikel->isi_artikel = $request->isi_artikel;
+        $artikel->sumber = $request->sumber;
         $artikel->jenis_golongan = $request->jenis_golongan;
         $artikel->save();
 

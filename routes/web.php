@@ -82,6 +82,8 @@ Route::middleware(['role', 'auth'])->group(function () {
 
     Route::resource('dashboards/event', 'AdminEventController');
     Route::delete( 'dashboard/event/{id}/destroy', 'AdminEventController@destroy')->name('event.destroy');
+    Route::get('dashboard/event/{id}/edit', 'AdminEventController@edit')->name('event.edit');
+    Route::patch('dashboard/event/{id}/edit', 'AdminEventController@update')->name('event.update');
 
     Route::resource('dashboards/wisata', 'AdminWisataController');
     Route::delete('dashboard/wisata/{id}/destroy', "AdminWisataController@destroy")->name('wisata.destroy');

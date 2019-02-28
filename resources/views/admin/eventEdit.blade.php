@@ -1,19 +1,29 @@
 @extends('layouts.dashboardLayout')
 
 @section('subhead')
-<h2>ARTKEL BARU</h2>    
+<h2>EVENT BARU</h2>    
 @endsection
 
 @section('isi')
     <div class="col-md-12">
-            <form action="{{ route('artikel.store') }}" method="post" role="form" class="contactForm">
+            <form action="{{ route('event.store') }}" method="post" role="form" class="contactForm" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-2 col-md-2">
-                            <label>Judul</label>
+                            <label>Nama Wisata</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-                            <input type="text" name="judul_artikel" id="judul_artikel" placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <label>Nama Event</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            <input type="text" name="nama_event" id="judul_artikel" value="{{ $eventEdit->nama_event }}" placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
                         </div>
                     </div>
                 </div>
@@ -21,30 +31,44 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-2 col-md-2">
-                            <label>Isi Artikel</label>
+                            <label>Gambar Event</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-                                <textarea name="isi_artikel" rows="5" data-rule="required" data-msg="Please write something for us" class="form-control" placeholder=""></textarea>
+                        <input type="file" name="gambar_event" value="" class="form-control">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-2 col-md-2">
-                            <label>Sumber</label>
+                            <label>Tanggal Event</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-                            <input type="text" name="sumber" id="sumber" placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="date" name="tanggal_event" value="{{ $eventEdit->tanggal_event }}" id="judul_artikel" placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-2 col-md-2">
-                            <label>Jenis</label>
+                            <label>Jam Event</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-                            <select name="jenis_golongan" class="form-control">
+                            <input type="text" name="jam_event"  placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <label>Jenis Golongan</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            <select name="golongan" class="form-control">
                                 <option value="Nahdlatul Ulama">Nahdlatul Ulama</option>
                                 <option value="Muhammad Diyah">Muhammad Diyah</option>
                             </select>

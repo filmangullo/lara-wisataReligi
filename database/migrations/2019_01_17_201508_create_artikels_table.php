@@ -18,6 +18,7 @@ class CreateArtikelsTable extends Migration
             $table->string('judul_artikel');
             $table->text('isi_artikel');
             $table->string('jenis_golongan');
+            $table->text('sumber');
             $table->timestamps();
         });
     }

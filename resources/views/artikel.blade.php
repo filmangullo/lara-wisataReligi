@@ -23,7 +23,7 @@
                         <p>
                         @foreach ($artikelagama as $item)
                         @if($item->id == 1)
-                        {{$item->isi_artikel}}
+                        {!! $item->isi_artikel !!}
                         @endif
                         @endforeach
                         </p>

@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('nama_event');
             $table->text('gambar_event');
             $table->date('tanggal_event')->nullable();
-            $table->string('jam_event');
+            $table->time('jam_event');
             $table->text('golongan');
             $table->timestamps();
 

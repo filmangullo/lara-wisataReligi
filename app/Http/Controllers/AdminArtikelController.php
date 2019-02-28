@@ -78,6 +78,7 @@ class AdminArtikelController extends Controller
         $updateArtikel->update([
             'judul_artikel'     => request('judul_artikel'),
             'isi_artikel'       => request('isi_artikel'),
+            'sumber'            => request('sumber'),
             'jenis_golongan'    => request('jenis_golongan')
         ]);
 

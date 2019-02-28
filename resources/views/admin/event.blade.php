@@ -23,6 +23,9 @@
                         <td>{{ $item->nama_event }}</td>
                         <td>{{ $item->tanggal_event }} </td>
                         <td>
+                            <a href="{{route('event.edit', $item->id)}}" class="btn btn-warning">Edit</a>
+                        </td>
+                        <td>
                             <form action="{{ route('event.destroy', $item->id)}}" method="post">
                                 {{csrf_field()}}
                                 {{method_field('DELETE')}}

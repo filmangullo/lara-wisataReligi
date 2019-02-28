@@ -17,12 +17,8 @@
               </div>
               <img src="img/dummies/blog/img1.jpg" alt="" />
             </div>
-            
               {!! $artikel->isi_artikel !!}
-          
-
-
-
+          <div>{{ $artikel->sumber }}</div>
           </div>
         </div>
       </article>

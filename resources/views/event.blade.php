@@ -37,8 +37,8 @@
                 @elseif ($event->golongan == 'Muhammad Diyah') 
                   <li class="item-thumbs span6 web" data-id="id-0" data-type="icon">
                 @endif
-                @if($event->tanggal_event == $now_day)
-                  <h3>Today</h3>
+                @if ($event->tanggal_event == $now_day)
+                  <h3>Now</h3>
                 @elseif ($event->tanggal_event < $now_day)
                   <h3>Has Ended</h3>
                 @elseif ($event->tanggal_event > $now_day)

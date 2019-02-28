@@ -34,6 +34,17 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-2 col-md-2">
+                            <label>Sumber</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            <input type="text" name="sumber" value="{{ $artikelEdit->sumber }}" id="judul_artikel" data-rule="minlen:4" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
                             <label>Jenis</label>
                         </div>
                         <div class="col-lg-10 col-md-10">

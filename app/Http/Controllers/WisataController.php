@@ -129,7 +129,7 @@ class WisataController extends Controller
      */
     public function event(Wisata $wisata)
     {
-        $now_day = Carbon\Carbon::now();
+        $now_day = Carbon\Carbon::now()->format('Y-m-d');
 
         // dd($now_day);
 
