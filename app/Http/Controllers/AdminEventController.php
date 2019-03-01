@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Wisata;
+use Image; 
 
 class AdminEventController extends Controller
 {
@@ -60,7 +62,9 @@ class AdminEventController extends Controller
     {
         $eventEdit = Event::find($id);
 
-        return view('admin.eventEdit', compact('eventEdit'));
+        $wisatas = Wisata::all();
+
+        return view('admin.eventEdit', compact('eventEdit', 'wisatas'));
     }
 
     /**
@@ -72,7 +76,22 @@ class AdminEventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->hasFile('gambar_event')) {
+            $gambar_event = $request->file('gambar_event');
+            $filename = time() . '.' . $gambar_event->getClientOriginalExtension();
+            Image::make($gambar_event)->resize(850, 637)->save(public_path('/img/event/' . $filename));
+        
+            $updateEvent = Event::find($id);
+            $updateEvent->update([
+            'wisata_id' => request('wisata_id'),
+            'nama_event' => request('nama_event'),
+            'gambar_event' => '/img/event/'.$filename,
+            'tanggal_event' => request('tanggal_event'),
+            'jam_event' => request('jam_event'),
+            'golongan' => request('golongan')
+        ]);
+        }
+        return redirect()->back();       
     }
 
     /**

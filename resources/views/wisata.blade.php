@@ -145,7 +145,7 @@
             <div class="alert alert-warning">
                 <i class="fa fa-exclamation-triangle"></i> Wisata tidak tersedia
             </div>
-          @endif
+          @endif  
             </section>
 
           </div>

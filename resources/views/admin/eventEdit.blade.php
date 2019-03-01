@@ -1,19 +1,27 @@
 @extends('layouts.dashboardLayout')
 
 @section('subhead')
-<h2>EVENT BARU</h2>    
+<h2>EVENT EDIT</h2>    
 @endsection
 
 @section('isi')
     <div class="col-md-12">
-            <form action="{{ route('event.store') }}" method="post" role="form" class="contactForm" enctype="multipart/form-data">
+            <form action="{{ route('event.update', $eventEdit ) }}" method="post" role="form" class="contactForm" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                {{ method_field('PATCH') }}
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-2 col-md-2">
                             <label>Nama Wisata</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-
+                            
+                        </div><div class="col-lg-10 col-md-10">
+                            <select name="wisata_id" class="form-control">
+                                @foreach ($wisatas as $wisata)
+                                <option value="{{$wisata->id }}">{{$wisata->wisata_nama }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -57,7 +65,7 @@
                             <label>Jam Event</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-                            <input type="text" name="jam_event"  placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="time" name="jam_event" value="{{ $eventEdit->jam_event }}"  placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
                         </div>
                     </div>
                 </div>

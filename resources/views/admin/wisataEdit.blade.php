@@ -15,7 +15,7 @@
                             <label>Nama</label>
                         </div>
                         <div class="col-lg-10 col-md-10">
-                            <input type="text" name="wisata_nama" value="{{ $wisataEdit->wisata_nama }}" id="wisata_nama" placeholder="" data-rule="minlen:4" class="form-control" data-msg="Please enter at least 8 chars of subject" />
+                            <input type="text" name="wisata_nama" value="{{ $wisataEdit->wisata_nama }}" id="wisata_nama" placeholder="" data-rule="minlen:4" class="form-control" readonly data-msg="Please enter at least 8 chars of subject" />
                         </div>
                     </div>
                 </div>
